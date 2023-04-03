@@ -22,7 +22,7 @@ def handle_pylon(elem, txinfo):
     elif contract in [ANCHOR_REWARDS_CONTRACT, VALKYRIE_REWARDS_CONTRACT]:
         return _handle_rewards_claim(elem, txinfo, msgs)
     else:
-        return make_simple_tx(txinfo, "PYLON_UNKNOWN")
+        return make_simple_tx(txinfo, "_PYLON_UNKNOWN")
 
     raise Exception("handle_pylon(): Unable to handle txid={}".format(txid))
 
@@ -93,7 +93,7 @@ def _handle_pool_withdraw(elem, txinfo, msgs):
     return [burn_row, withdraw_row]
 
 def _handle_gov_stake(elem, txinfo, msgs):
-    return [make_simple_tx(txinfo, "PYLON_UNKNOWN")]
+    return [make_simple_tx(txinfo, "_PYLON_UNKNOWN")]
 
 TERRAWORLD_REWARDS_CONTRACT = "terra1qz6kp8nu5cqy6g679epd2f436p8uyry0aevrxc"
 VALKYRIE_REWARDS_CONTRACT = "terra1p625agkeu4vrr4fqnl5c82myhy3z95t6tqycku"
